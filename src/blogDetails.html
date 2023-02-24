@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://kit.fontawesome.com/9345e60b24.js" crossorigin="anonymous"></script>
+    <title>Blog Details</title>
+</head>
+<body onload="hanleDetails(),handleDisplayComment()" class="blogDetails">
+    <div class="details">
+        <div class="part1">
+            <div class="center-loader">
+                <div class="ring-loader"></div>
+                <span class="span-loader">loading...</span>
+            </div>
+        </div>
+        <div class="part2">
+            <h1 class='other-blogs'>Other Blogs</h1>
+            <hr class='lineBtn'/>
+            <div class="part2-cont">
+                
+            </div>
+        </div>
+    </div>
+    <div class="VISITORSIGNUPpopuptab">
+        <div class="visitorinnerpopup">
+            <div class="dismisvisitorpopup"><span class="dismisvisitorpopupspan" onclick="VISITORSIGNUPhandleDismiss()">x</span></div>
+            <div class="blogformcontainer">
+                <h1>Enter Your Credentials</h1>
+                <form id="visitorFormInputs">
+                    <div class="visitor1 notshown">
+                        <label class="label">Full Name:</label>
+                        <input class="visitor-name-field" id='visitor-SignUp-name' type="text" placeholder="Full Name"  onkeyup="ValidateVisitorName()">
+                        <span id="visitor-name-error"></span>
+                    </div>
+                    <div class="visitor2">
+                        <label class="label">Email:</label>
+                        <input class="visitor-email-field" type="text" placeholder="Email" id="visitor-SignUp-email" onkeyup="ValidateVisitorEmail()">
+                        <span id="visitor-Email-error"></span>
+                    </div>
+                    <div class="visitor3">
+                        <label class="label">Password:</label>
+                        <input class="visitor-password-field" type="password" placeholder="Password" id="visitor-SignUp-password" onkeyup="ValidateVisitorPassword()">
+                        <span id="visitor-password-error"></span>
+                    </div>
+                    <div class="visitor4 notshown">
+                        <label class="label">Comfirm Password:</label>
+                        <input class="visitor-comfirmpassword-field" type="password" placeholder="Comfirm Password" id="visitor-SignUp-comfirmPassword" onkeyup="ValidateVisitorComfirmPassword()">
+                        <span id="visitor-comfirmPassword-error"></span>
+                    </div>
+                    <button onclick="handleSendVisitor(event)" id="VisitorLoginbtn" class="VisitorLoginbtn notshown">SIGNUP</button>
+                    <button onclick="handleVistorLogIn(event)" class="VisitorLoginbtn2" >SIGNIN</button>
+                    <span class="visitor-submit-error" id="visitor-submit-error"></span>
+                    <div class="center-loader2">
+                        <div class="ring-loader2"></div>
+                    </div>
+                    <div class="visitorswitch" onclick="handleChanges()">Don't Have an Account? SignUp</div>
+                    <div class="visitorswitch2 notshown" onclick="rehandleChanges()">Already Have an Account? SignIn</div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="loader-popup2">
+        <div class="center-loader">
+            <div class="ring-loader"></div>
+            <span class="span-loader">Logingout....</span>
+        </div>
+    </div>
+    <script defer src="../index.js"></script>
+</body>
+</html>

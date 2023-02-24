@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="index.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/9345e60b24.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+       (function(){
+          emailjs.init("EroZD85UgUctGy8KQ");
+       })();
+    </script>
+    <title>Jules Portfolio</title>
+</head>
+<body onload="getBlog(),handletab('skills'),getUser()">
+    <nav id="navbar1">
+        <div class="image" >
+            <img class="avatar" src="images/pic.jpeg">
+        </div>
+        <div class="listContainer">
+            <ul class="list">
+                <i onclick="handleHide()" class="fa-sharp fa-solid fa-xmark" id="close"></i>
+                <li onclick="handleHide()" class="links">
+                    <a href="#home">Home</a>
+                </li>
+                <li onclick="handleHide()" class="links">
+                    <a href="#about">About</a>
+                </li>
+                <li onclick="handleHide()" class="links">
+                   <a href="#services">Services</a> 
+                </li>
+                <li onclick="handleHide()" class="links">
+                    <a href="#portfolio">Portfolio</a>
+                </li>
+                <li onclick="handleHide()" class="links">
+                    <a href="#blog">Blog</a>
+                </li>
+                <li onclick="handleHide()" class="links">
+                    <a href="#contact">Contact</a>
+                </li>
+            </ul>
+            <div class="icons">
+                <a href="https://web.facebook.com/niyomungeli.jules.3/"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://twitter.com/kendixjules"><i class="fa-brands fa-twitter"></i></a>  
+                <a href="https://www.linkedin.com/in/jules-niyomwungeri-457b08247/"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/kendixjules/" ><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <div class="cart">
+                <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+            </div>
+        </div>
+        <div class="button">
+            <button class="nbutton visible-block" onclick="displaySignUpPopUp()">ADMIN SIGNUP</button>
+            <div class="Admin-logout" onclick="handleAdminLogout()"><i class="fa-solid fa-right-from-bracket"></i><span></span></div>
+        </div>
+        <div class="hamburger">
+            <i class="fa-sharp fa-solid fa-bars" id="bars"></i>
+        </div>
+    </nav>
+    <section class="home" id="home">
+        <p class="para">FREELANCE DIGITAL WEBSITE</p>
+        <h1 class="hhome">
+            Hello I'am <span class="span">Jules</span> 
+            Welcome to my world.
+        </h1>
+    </section>
+    <section class="about" id="about">
+        <img class="hero" src="images/pic.jpeg" alt="pic"/>
+        <div class="heropara">
+            <h1 class="herohead">About Me</h1>
+            <p class="para">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Ab odit aperiam est impedit, exercitationem cupiditate rem
+                quia facere modi culpa obcaecati suscipit mollitia! A quidem,
+                magnam eos optio modi consequuntur?
+            </p>
+            <div class="wraper">
+                <ul class="listwraper">
+                    <li class="nlists default" onclick="handletab('skills')">Main skills</li>
+                    <li class="nlists" onclick="handletab('awards')">Awards</li>
+                    <li class="nlists" onclick="handletab('Experience')">Experience</li>
+                    <li class="nlists" onclick="handletab('Education')">Education & Certification</li>
+                </ul>
+                <div class="desc" id="skills">
+                    <ul>
+                        <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
+                        <li><span>Web Development</span><br>Web App Development</li>
+                        <li><span>App Development</span><br>Building Android/ios apps</li>
+                    </ul>
+                </div>
+                <div class="desc" id="awards">
+                    <ul>
+                        <li><span>2021 - current</span><br>UI/UX Design Training at ET Institute</li>
+                        <li><span>2019 - 2021</span><br>Team Lead at StartApp LLC.</li>
+                        <li><span>2017 -2019</span><br>UI/UX Design Executive at Coin Digital Ltd.</li>
+                        <!-- <li><span>2016 -2017</span><br>Internship at ekart eCommerce.</li> -->
+                    </ul>
+                </div>
+                <div class="desc" id="Experience">
+                    <ul>
+                        <li><span>2016</span><br>UI/UX Design Training at ET Institute</li>
+                        <li><span>2016</span><br>Web App Development</li>
+                        <li><span>2014</span><br>Building Android/ios apps</li>
+                    </ul>
+                </div>
+                <div class="desc" id="Education">
+                    <ul>
+                        <li><span>2021 - current</span><br>bachors degree at IPRC Kigali</li>
+                        <li><span>2017 - 2019</span><br>A-Level at IPRC Kigali</li>
+                        <li><span>2014 - 2016</span><br>O-Level at APAPEC</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="services" id="services">
+      <div class="header">
+          <h1 class="nservices">My Awesome Services</h1>
+          <p class="pservices">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Sed rerum aspernatur consectetur! Deserunt magni nulla
+              eaque veniam 
+              
+          </p>
+      </div>
+      <div class="servicesbody">
+        <div class="smallbody">
+            <div class="scontainer">
+                <i class="fa-solid fa-layer-group"></i>
+                <h2 class="sbody">Web Development</h2>
+                <p class="smbody">
+                    Designing and Developing a website 
+                    is my best services That I Provide.
+                </p>
+            </div>
+        </div>
+        <div class="smallbody">
+            <div class="scontainer">
+                <i class="fa-solid fa-tags"></i>
+                <h2 class="sbody">Frontend Development</h2>
+                <p class="smbody">
+                    The Best Userinterface Design With
+                    Awesome Fonts And Colors Using HTML,
+                    CSS,React,React-redux, And JavaScript.
+                </p>
+            </div>
+        </div>
+        <div class="smallbody">
+            <div class="scontainer">
+                <i class="fa-solid fa-server"></i>
+                <h2 class="sbody">Backend Development</h2>
+                <p class="smbody">
+                    Server Side Development And  Maintenance
+                    Using NodeJS And Express.
+                </p>
+            </div>
+        </div>
+        <div class="smallbody">
+            <div class="scontainer">
+                <i class="fa-solid fa-paperclip"></i>
+                <h2 class="sbody">Figma Designing</h2>
+                <p class="smbody">
+                    The Best of The Best World Class Figma
+                    Designs To Take As Considaration Before
+                    The Official Website.
+                </p>
+            </div>
+        </div>
+        <div class="smallbody">
+            <div class="scontainer">
+                <i class="fa-solid fa-database"></i>
+                <h2 class="sbody">DataBase Managenent</h2>
+                <p class="smbody">
+                    Best DataBase Services Using MongoDB
+                    And Others.
+                </p>
+            </div>
+        </div>
+        <div class="smallbody">
+            <div class="scontainer">
+                <i class="fa-solid fa-house"></i>
+                <h2 class="sbody">website Hosting</h2>
+                <p class="smbody">
+                    Best Websites Hosting Services Both 
+                    Frontend And Backend using Heroku 
+                    And Netlify Or Other Pratforms.
+                </p>
+            </div>
+        </div>
+      </div>
+      </section>
+    </section>
+    <section class="portfolio" id="portfolio">
+        <div class="header">
+            <h1 class="nportfolio">My Latest Project</h1>
+            <p class="pportfolio">
+                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.
+            </p>
+        </div>
+        <div class="portfoliobody">
+          <div class="smallportfolio">
+            <img src="images/carculator.PNG"/>
+            <div class="collector">
+                <p class="pr">Development</p>
+                <h1 class="prad">Best designed simple carculator.</h1>
+                <a href="https://html-simple-carculator.vercel.app/"><button class="prbutton">CASE STUDY</button></a>
+            </div>
+          </div>
+          <div class="smallportfolio">
+            <img src="images/todo list.PNG"/>
+            <div class="collector">
+                <p class="pr">Freelance</p>
+                <h1 class="prad">You Can See Your Portfolio.</h1>
+                <a href="https://codepen.io/Jules-Niyomwungeri/pen/wvxGGMq"><button class="prbutton">CASE STUDY</button></a>
+            </div>
+          </div>
+          <div class="smallportfolio">
+            <img src="images/mobile app.jpg"/>
+            <div class="collector">
+                <p class="pr">App Development</p>
+                <h1 class="prad">The Language of development.</h1>
+                <a><button class="prbutton">CASE STUDY</button></a>
+            </div>
+          </div>
+          <div class="smallportfolio">
+            <img src="images/mobile app.jpg"/>
+            <div class="collector">
+                <p class="pr">Figma Designs</p>
+                <h1 class="prad">The Best Figma Design Are Found Here.</h1>
+                <button class="prbutton">CASE STUDY</button>
+            </div>
+          </div>
+          <div class="smallportfolio">
+            <img src="images/mobile app.jpg"/>
+            <div class="collector">
+                <p class="pr">FrontEnd Websites</p>
+                <h1 class="prad">Best Frontend Designs Found Here.</h1>
+                <button class="prbutton">CASE STUDY</button>
+            </div>
+          </div>
+          <div class="smallportfolio">
+            <img src="images/mobile app.jpg"/>
+            <div class="collector">
+                <p class="pr">Backend Websites</p>
+                <h1 class="prad">Best Backend Designs Are Found Here.</h1>
+                <button class="prbutton">CASE STUDY</button>
+            </div>
+          </div>
+        </div>
+    </section>
+    <section class="blog" id="blog">
+        <div class="header">
+            <h1 class="nblog">Latest News</h1>
+            <p class="pblog">
+                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.
+            </p>
+        </div>
+        <div id="blogbody" class="blogbody">
+            <!-- <div class="pre-loader"></div> -->
+            <div class="center-loader">
+                <div class="ring-loader"></div>
+                <span class="span-loader">loading...</span>
+            </div>
+
+
+        </div>
+        <div class="ablogbutton">
+            <!-- <div onclick="displayPopUp()" class="blogbutton1 create"></div> -->
+            <a href="src/Dashboard.html"><div class="blogbutton1 create"></div></a>
+            <div onclick="displaySignUpPopUp()" class="blogbutton2 signup">LogIn As an Admin</div>
+        </div>
+        <div class="SIGNUPpopuptab">
+            <div class="innerpopup">
+                <div onclick="SIGNUPhandleDismiss()"  class="dismisspopup">x</div>
+                <div class="blogformcontainer">
+                    <h1>Enter Your Credentials</h1>
+                    <form id="userFormInputs">
+                        <div class="hidden2 notshown">
+                            <label class="label">Full Name:</label>
+                            <input class="name-field" id='SignUp-name' type="text" placeholder="Full Name"  onkeyup="ValidateName()">
+                            <span id="name-error"></span>
+                        </div>
+                        <div class="bloginput">
+                            <label class="label">Email:</label>
+                            <input class="email-field" type="text" placeholder="Email" id="SignUp-email" onkeyup="ValidateEmail()">
+                            <span id="Email-error"></span>
+                        </div>
+                        <div class="bloginput">
+                            <label class="label">Password:</label>
+                            <input class="password-field" type="password" placeholder="Password" id="SignUp-password" onkeyup="ValidatePassword()">
+                            <span id="password-error"></span>
+                        </div>
+                        <div class="hidden3 notshown">
+                            <label class="label">Comfirm Password:</label>
+                            <input class="comfirmpassword-field" type="password" placeholder="Comfirm Password" id="SignUp-comfirmPassword" onkeyup="ValidateComfirmPassword()">
+                            <span id="comfirmPassword-error"></span>
+                        </div>
+                        <button id="signup" class="Loginbtn notshown">SIGNUP</button>
+                        <button id="signin" class="Loginbtn2" >SIGNIN</button>
+                        <span id="submit-error" class="submit-error"></span>
+                        <div class="center-loader2">
+                            <div class="ring-loader2"></div>
+                        </div>
+                        <div class="switch">Don't Have an Account? SignUp</div>
+                        <div class="switch2 notshown">Already Have an Account? SignIn</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <div class="commandcontact">
+            <div class="contactbody">
+                <div class="contactwraper">
+                    <h1 class="ncontact">Hire Me</h1>
+                    <p class="pcontact">I am available for freelance work. Connect with me via phone: <br/><span class="pspan">+250 784 766 280</span> or email: <span class="pspan">julesniyomwungeri144 @gmail.com</span></p>
+                </div>
+                <div class="formwraper">
+                    <form class="form" id="form" action="/" onsubmit="validation(event)">
+                        <div class="inputcontroller">
+                            <input class="inputs" id="username" type="text" placeholder="Your Name ">
+                            <h6 id="error1"></h6>
+                        </div>
+                        <div class="inputcontroller">
+                            <input class="inputs" id="email" type="text" placeholder="Your email ">
+                            <h6 id="error2"></h6>
+                        </div>
+                        <div class="inputcontroller">
+                            <input class="inputs" id="subject" type="text" placeholder="Write a Subject">
+                            <h6 id="error3"></h6>
+                        </div>
+                        <div class="inputcontroller">
+                            <textarea class="inputs" id="message" placeholder="Your Message" name="" id="" cols="30" rows="3"></textarea>
+                            <h6 id="error4"></h6>
+                        </div>
+                        <div class="arrange">
+                            <button onclick="sendEmail()" class="formbutton" type="submit">SEND MESSAGE</button>
+                            <a href="https://julescv.vercel.app/" download type="submit">SEE MY CV</a>
+                        </div>
+                        <div class="comfirmAll" id="comfirm"></div>
+                    </form>
+                </div>
+            </div>
+            <div class="avatarcommand">
+                <img src="images/pic.jpeg" alt="icon" class="contactavatar">
+            </div>
+        </div>
+    </section>
+    <section>
+       <a class="easytop" href="#home">
+          <i class="fa-solid fa-arrow-up"></i>
+       </a>
+    </section>
+    <footer class="footer">
+        <div class="footer1">
+            <img class="footeravatar" src="images/pic.jpeg" alt="icon">
+            <h1 class="hfooter">Kendix</h1>
+        </div>
+        <div class="footer2">
+            <a href="https://web.facebook.com/niyomungeli.jules.3/"><div class="cilcle"><i class="fa-brands fa-facebook-f"></i></div></a>
+            <a href="https://twitter.com/kendixjules"><div class="cilcle"><i class="fa-brands fa-twitter"></i></div></a>
+            <a href="https://www.linkedin.com/in/jules-niyomwungeri-457b08247/"><div class="cilcle"><i class="fa-brands fa-linkedin-in"></i></div></a>
+            <a href="https://www.instagram.com/kendixjules/"><div class="cilcle"><i class="fa-brands fa-instagram"></i></div></a>
+        </div>
+        <div class="footer3">
+            <p class="outside">© 2022. All rights reserved by <a>JulesKendix.</a></p>
+        </div>
+    </footer>
+    <div class="loader-popup2">
+        <div class="center-loader">
+            <div class="ring-loader"></div>
+            <span class="span-loader">Logingout....</span>
+        </div>
+    </div>
+</body>
+</html>
