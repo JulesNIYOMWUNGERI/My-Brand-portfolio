@@ -1032,6 +1032,7 @@ signInButton.addEventListener('click', handleLogin = async(e) => {
               SIGNUPhandleDismiss();
         })
         .catch((error) => {
+            loader.classList.remove('block-visible')
             SubmitError.innerHTML=`${error.response.data.message}`
 
             setTimeout(function(){
@@ -1681,6 +1682,8 @@ async function handleVistorLogIn(e){
 
      })
      .catch((error) => {
+         loader.classList.remove('block-visible')
+
          SubmitError.innerHTML=`${error.response.data.message}`
 
          setTimeout(function(){
@@ -1758,7 +1761,7 @@ async function handleDashboard() {
         <img class='dashImg' src="https://avatars.githubusercontent.com/u/118351366?v=4"/>
         <div class='dashTitle'>
           <h1>${user?.result.fullname}</h1>
-          <h1>${user?.result.email}</h1>
+          <h1>${user?.result.email.split('@').join(' @ ')}</h1>
           <h1>Number of Blogs You Have:${blogs?.length}</h1>
           <button class='dashBtn' onclick="displayPopUp()">Create New Blog</button>
         </div>
@@ -1770,7 +1773,7 @@ async function handleDashboard() {
         innerUserContValue.innerHTML += `
           <div class='nowAllUsers'>
             <p>${allVistors[i]?.fullname}</p>
-            <p>${allVistors[i]?.email}</p>
+            <p>${allVistors[i]?.email.split('@').join(' @ ')}</p>
             <span onclick='handleDeleteUser("${allVistors[i]?._id}")'>delete</span>
           </div>
         `
